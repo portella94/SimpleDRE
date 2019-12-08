@@ -93,7 +93,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmConta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmConta";
+            this.Text = "Inserção de Contas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

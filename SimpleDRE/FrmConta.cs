@@ -19,21 +19,25 @@ namespace SimpleDRE
         }
         private void PopularTipoConta()
         {
-
             try
             {
-
-
-                //cmbTipoConta.DataSource = from Conta n in Enum.GetValues(typeof(TipoConta))
-                //                          select new { Text = n, Value = Convert.ToByte(n) };
-                //cmbTipoConta.DisplayMember = "Text";
-                //cmbTipoConta.ValueMember = "Value";
-
                 cmbTipoConta.DataSource = Enum.GetNames(typeof(TipoConta));
+                cmbTipoConta.DisplayMember = "Description";
+                cmbTipoConta.DataSource = Enum.GetValues(typeof(TipoConta))
+                    .Cast<Enum>()
+                    .Select(value => new
+                    {
+                        (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()), typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                        value
+                    })
+                    .OrderBy(item => item.value)
+                    .ToList();
+                cmbTipoConta.DisplayMember = "Description";
+                cmbTipoConta.ValueMember = "Value";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Erro ao carregar Àreas: \n {0}", ex.Message), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format("Erro ao carregar tipos de conta: \n {0}", ex.Message), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
@@ -43,9 +47,17 @@ namespace SimpleDRE
             var conta = new Conta();
             //conta.idConta = Conta.GetId();
             conta.DescricaoConta = txtDescricaoConta.Text;
-            conta.TipoConta = (TipoConta)Enum.Parse(typeof(TipoConta), cmbTipoConta.Text);
-            Conta.Insert(conta);
-
+            Enum.TryParse(cmbTipoConta.SelectedValue.ToString(), out TipoConta tipo);
+            conta.TipoConta = tipo;
+            try
+            {
+                Conta.Insert(conta);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Erro ao inserir conta: \n {0}", ex.Message), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            MessageBox.Show("Conta inserida com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

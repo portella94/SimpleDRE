@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleDRE
 {
-    class SubConta : Conta
+    public class SubConta : Conta
     {
         public int idSubConta { get; set; }
         public string DescricaoSubConta { get; set; }

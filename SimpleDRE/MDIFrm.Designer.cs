@@ -34,25 +34,25 @@
             this.lblFevereiro = new System.Windows.Forms.Label();
             this.txtFevereiro = new System.Windows.Forms.MaskedTextBox();
             this.lblMarco = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtMarco = new System.Windows.Forms.MaskedTextBox();
             this.lblAbril = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtAbril = new System.Windows.Forms.MaskedTextBox();
             this.lblMaio = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.txtMaio = new System.Windows.Forms.MaskedTextBox();
             this.lblJunho = new System.Windows.Forms.Label();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.txtJunho = new System.Windows.Forms.MaskedTextBox();
             this.lblJulho = new System.Windows.Forms.Label();
-            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.txtJulho = new System.Windows.Forms.MaskedTextBox();
             this.lblAgosto = new System.Windows.Forms.Label();
-            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
+            this.txtAgosto = new System.Windows.Forms.MaskedTextBox();
             this.lblSetembro = new System.Windows.Forms.Label();
-            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
+            this.txtSetembro = new System.Windows.Forms.MaskedTextBox();
             this.lblOutubro = new System.Windows.Forms.Label();
-            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.txtOutubro = new System.Windows.Forms.MaskedTextBox();
             this.lblNovembro = new System.Windows.Forms.Label();
-            this.maskedTextBox10 = new System.Windows.Forms.MaskedTextBox();
+            this.txtNovembro = new System.Windows.Forms.MaskedTextBox();
             this.lblDezembro = new System.Windows.Forms.Label();
-            this.maskedTextBox11 = new System.Windows.Forms.MaskedTextBox();
+            this.txtDezembro = new System.Windows.Forms.MaskedTextBox();
             this.lstDRE = new System.Windows.Forms.ListView();
             this.clConta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clJaneiro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -72,6 +72,7 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.cmbContas = new System.Windows.Forms.ComboBox();
             this.btnConta = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblConta
@@ -86,11 +87,12 @@
             // txtJaneiro
             // 
             this.txtJaneiro.Location = new System.Drawing.Point(145, 427);
-            this.txtJaneiro.Mask = "00000,000";
+            this.txtJaneiro.Mask = "00000.000";
             this.txtJaneiro.Name = "txtJaneiro";
             this.txtJaneiro.Size = new System.Drawing.Size(60, 20);
             this.txtJaneiro.TabIndex = 3;
             this.txtJaneiro.ValidatingType = typeof(int);
+            this.txtJaneiro.Validating += new System.ComponentModel.CancelEventHandler(this.txtJaneiro_Validating);
             // 
             // lblJaneiro
             // 
@@ -113,10 +115,11 @@
             // txtFevereiro
             // 
             this.txtFevereiro.Location = new System.Drawing.Point(212, 427);
-            this.txtFevereiro.Mask = "00000,000";
+            this.txtFevereiro.Mask = "00000.000";
             this.txtFevereiro.Name = "txtFevereiro";
             this.txtFevereiro.Size = new System.Drawing.Size(60, 20);
             this.txtFevereiro.TabIndex = 5;
+            this.txtFevereiro.Validating += new System.ComponentModel.CancelEventHandler(this.txtFevereiro_Validating);
             // 
             // lblMarco
             // 
@@ -127,13 +130,14 @@
             this.lblMarco.TabIndex = 8;
             this.lblMarco.Text = "Março";
             // 
-            // maskedTextBox2
+            // txtMarco
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(278, 427);
-            this.maskedTextBox2.Mask = "00000,000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox2.TabIndex = 7;
+            this.txtMarco.Location = new System.Drawing.Point(278, 427);
+            this.txtMarco.Mask = "00000.000";
+            this.txtMarco.Name = "txtMarco";
+            this.txtMarco.Size = new System.Drawing.Size(60, 20);
+            this.txtMarco.TabIndex = 7;
+            this.txtMarco.Validating += new System.ComponentModel.CancelEventHandler(this.txtMarco_Validating);
             // 
             // lblAbril
             // 
@@ -144,13 +148,14 @@
             this.lblAbril.TabIndex = 10;
             this.lblAbril.Text = "Abril";
             // 
-            // maskedTextBox3
+            // txtAbril
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(344, 427);
-            this.maskedTextBox3.Mask = "00000,000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox3.TabIndex = 9;
+            this.txtAbril.Location = new System.Drawing.Point(344, 427);
+            this.txtAbril.Mask = "00000.000";
+            this.txtAbril.Name = "txtAbril";
+            this.txtAbril.Size = new System.Drawing.Size(60, 20);
+            this.txtAbril.TabIndex = 9;
+            this.txtAbril.Validating += new System.ComponentModel.CancelEventHandler(this.txtAbril_Validating);
             // 
             // lblMaio
             // 
@@ -161,13 +166,14 @@
             this.lblMaio.TabIndex = 12;
             this.lblMaio.Text = "Maio";
             // 
-            // maskedTextBox4
+            // txtMaio
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(410, 427);
-            this.maskedTextBox4.Mask = "00000,000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox4.TabIndex = 11;
+            this.txtMaio.Location = new System.Drawing.Point(410, 427);
+            this.txtMaio.Mask = "00000.000";
+            this.txtMaio.Name = "txtMaio";
+            this.txtMaio.Size = new System.Drawing.Size(60, 20);
+            this.txtMaio.TabIndex = 11;
+            this.txtMaio.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaio_Validating);
             // 
             // lblJunho
             // 
@@ -178,13 +184,14 @@
             this.lblJunho.TabIndex = 14;
             this.lblJunho.Text = "Junho";
             // 
-            // maskedTextBox5
+            // txtJunho
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(476, 427);
-            this.maskedTextBox5.Mask = "00000,000";
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox5.TabIndex = 13;
+            this.txtJunho.Location = new System.Drawing.Point(476, 427);
+            this.txtJunho.Mask = "00000.000";
+            this.txtJunho.Name = "txtJunho";
+            this.txtJunho.Size = new System.Drawing.Size(60, 20);
+            this.txtJunho.TabIndex = 13;
+            this.txtJunho.Validating += new System.ComponentModel.CancelEventHandler(this.txtJunho_Validating);
             // 
             // lblJulho
             // 
@@ -195,13 +202,14 @@
             this.lblJulho.TabIndex = 16;
             this.lblJulho.Text = "Julho";
             // 
-            // maskedTextBox6
+            // txtJulho
             // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(542, 427);
-            this.maskedTextBox6.Mask = "00000,000";
-            this.maskedTextBox6.Name = "maskedTextBox6";
-            this.maskedTextBox6.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox6.TabIndex = 15;
+            this.txtJulho.Location = new System.Drawing.Point(542, 427);
+            this.txtJulho.Mask = "00000.000";
+            this.txtJulho.Name = "txtJulho";
+            this.txtJulho.Size = new System.Drawing.Size(60, 20);
+            this.txtJulho.TabIndex = 15;
+            this.txtJulho.Validating += new System.ComponentModel.CancelEventHandler(this.txtJulho_Validating);
             // 
             // lblAgosto
             // 
@@ -212,13 +220,14 @@
             this.lblAgosto.TabIndex = 18;
             this.lblAgosto.Text = "Agosto";
             // 
-            // maskedTextBox7
+            // txtAgosto
             // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(608, 427);
-            this.maskedTextBox7.Mask = "00000,000";
-            this.maskedTextBox7.Name = "maskedTextBox7";
-            this.maskedTextBox7.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox7.TabIndex = 17;
+            this.txtAgosto.Location = new System.Drawing.Point(608, 427);
+            this.txtAgosto.Mask = "00000.000";
+            this.txtAgosto.Name = "txtAgosto";
+            this.txtAgosto.Size = new System.Drawing.Size(60, 20);
+            this.txtAgosto.TabIndex = 17;
+            this.txtAgosto.Validating += new System.ComponentModel.CancelEventHandler(this.txtAgosto_Validating);
             // 
             // lblSetembro
             // 
@@ -229,13 +238,14 @@
             this.lblSetembro.TabIndex = 20;
             this.lblSetembro.Text = "Setembro";
             // 
-            // maskedTextBox8
+            // txtSetembro
             // 
-            this.maskedTextBox8.Location = new System.Drawing.Point(674, 427);
-            this.maskedTextBox8.Mask = "00000,000";
-            this.maskedTextBox8.Name = "maskedTextBox8";
-            this.maskedTextBox8.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox8.TabIndex = 19;
+            this.txtSetembro.Location = new System.Drawing.Point(674, 427);
+            this.txtSetembro.Mask = "00000.000";
+            this.txtSetembro.Name = "txtSetembro";
+            this.txtSetembro.Size = new System.Drawing.Size(60, 20);
+            this.txtSetembro.TabIndex = 19;
+            this.txtSetembro.Validating += new System.ComponentModel.CancelEventHandler(this.txtSetembro_Validating);
             // 
             // lblOutubro
             // 
@@ -246,13 +256,14 @@
             this.lblOutubro.TabIndex = 22;
             this.lblOutubro.Text = "Outubro";
             // 
-            // maskedTextBox9
+            // txtOutubro
             // 
-            this.maskedTextBox9.Location = new System.Drawing.Point(740, 427);
-            this.maskedTextBox9.Mask = "00000,000";
-            this.maskedTextBox9.Name = "maskedTextBox9";
-            this.maskedTextBox9.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox9.TabIndex = 21;
+            this.txtOutubro.Location = new System.Drawing.Point(740, 427);
+            this.txtOutubro.Mask = "00000.000";
+            this.txtOutubro.Name = "txtOutubro";
+            this.txtOutubro.Size = new System.Drawing.Size(60, 20);
+            this.txtOutubro.TabIndex = 21;
+            this.txtOutubro.Validating += new System.ComponentModel.CancelEventHandler(this.txtOutubro_Validating);
             // 
             // lblNovembro
             // 
@@ -263,13 +274,14 @@
             this.lblNovembro.TabIndex = 24;
             this.lblNovembro.Text = "Novembro";
             // 
-            // maskedTextBox10
+            // txtNovembro
             // 
-            this.maskedTextBox10.Location = new System.Drawing.Point(806, 427);
-            this.maskedTextBox10.Mask = "00000,000";
-            this.maskedTextBox10.Name = "maskedTextBox10";
-            this.maskedTextBox10.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox10.TabIndex = 23;
+            this.txtNovembro.Location = new System.Drawing.Point(806, 427);
+            this.txtNovembro.Mask = "00000.000";
+            this.txtNovembro.Name = "txtNovembro";
+            this.txtNovembro.Size = new System.Drawing.Size(60, 20);
+            this.txtNovembro.TabIndex = 23;
+            this.txtNovembro.Validating += new System.ComponentModel.CancelEventHandler(this.txtNovembro_Validating);
             // 
             // lblDezembro
             // 
@@ -280,13 +292,14 @@
             this.lblDezembro.TabIndex = 26;
             this.lblDezembro.Text = "Dezembro";
             // 
-            // maskedTextBox11
+            // txtDezembro
             // 
-            this.maskedTextBox11.Location = new System.Drawing.Point(872, 427);
-            this.maskedTextBox11.Mask = "00000,000";
-            this.maskedTextBox11.Name = "maskedTextBox11";
-            this.maskedTextBox11.Size = new System.Drawing.Size(60, 20);
-            this.maskedTextBox11.TabIndex = 25;
+            this.txtDezembro.Location = new System.Drawing.Point(872, 427);
+            this.txtDezembro.Mask = "00000.000";
+            this.txtDezembro.Name = "txtDezembro";
+            this.txtDezembro.Size = new System.Drawing.Size(60, 20);
+            this.txtDezembro.TabIndex = 25;
+            this.txtDezembro.Validating += new System.ComponentModel.CancelEventHandler(this.txtDezembro_Validating);
             // 
             // lstDRE
             // 
@@ -376,6 +389,7 @@
             this.btnInserir.TabIndex = 28;
             this.btnInserir.Text = "Inserir na tabela";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnGerar
             // 
@@ -416,11 +430,22 @@
             this.btnConta.UseVisualStyleBackColor = true;
             this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(527, 466);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(87, 23);
+            this.btnLimpar.TabIndex = 32;
+            this.btnLimpar.Text = "Limpar Campos";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // MDIFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnConta);
             this.Controls.Add(this.cmbContas);
             this.Controls.Add(this.btnRemover);
@@ -428,25 +453,25 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.lstDRE);
             this.Controls.Add(this.lblDezembro);
-            this.Controls.Add(this.maskedTextBox11);
+            this.Controls.Add(this.txtDezembro);
             this.Controls.Add(this.lblNovembro);
-            this.Controls.Add(this.maskedTextBox10);
+            this.Controls.Add(this.txtNovembro);
             this.Controls.Add(this.lblOutubro);
-            this.Controls.Add(this.maskedTextBox9);
+            this.Controls.Add(this.txtOutubro);
             this.Controls.Add(this.lblSetembro);
-            this.Controls.Add(this.maskedTextBox8);
+            this.Controls.Add(this.txtSetembro);
             this.Controls.Add(this.lblAgosto);
-            this.Controls.Add(this.maskedTextBox7);
+            this.Controls.Add(this.txtAgosto);
             this.Controls.Add(this.lblJulho);
-            this.Controls.Add(this.maskedTextBox6);
+            this.Controls.Add(this.txtJulho);
             this.Controls.Add(this.lblJunho);
-            this.Controls.Add(this.maskedTextBox5);
+            this.Controls.Add(this.txtJunho);
             this.Controls.Add(this.lblMaio);
-            this.Controls.Add(this.maskedTextBox4);
+            this.Controls.Add(this.txtMaio);
             this.Controls.Add(this.lblAbril);
-            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.txtAbril);
             this.Controls.Add(this.lblMarco);
-            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.txtMarco);
             this.Controls.Add(this.lblFevereiro);
             this.Controls.Add(this.txtFevereiro);
             this.Controls.Add(this.lblJaneiro);
@@ -467,25 +492,25 @@
         private System.Windows.Forms.Label lblFevereiro;
         private System.Windows.Forms.MaskedTextBox txtFevereiro;
         private System.Windows.Forms.Label lblMarco;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox txtMarco;
         private System.Windows.Forms.Label lblAbril;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox txtAbril;
         private System.Windows.Forms.Label lblMaio;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox txtMaio;
         private System.Windows.Forms.Label lblJunho;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.MaskedTextBox txtJunho;
         private System.Windows.Forms.Label lblJulho;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.MaskedTextBox txtJulho;
         private System.Windows.Forms.Label lblAgosto;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
+        private System.Windows.Forms.MaskedTextBox txtAgosto;
         private System.Windows.Forms.Label lblSetembro;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
+        private System.Windows.Forms.MaskedTextBox txtSetembro;
         private System.Windows.Forms.Label lblOutubro;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
+        private System.Windows.Forms.MaskedTextBox txtOutubro;
         private System.Windows.Forms.Label lblNovembro;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox10;
+        private System.Windows.Forms.MaskedTextBox txtNovembro;
         private System.Windows.Forms.Label lblDezembro;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox11;
+        private System.Windows.Forms.MaskedTextBox txtDezembro;
         private System.Windows.Forms.ListView lstDRE;
         private System.Windows.Forms.ColumnHeader clConta;
         private System.Windows.Forms.ColumnHeader clJaneiro;
@@ -505,6 +530,7 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.ComboBox cmbContas;
         private System.Windows.Forms.Button btnConta;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
 

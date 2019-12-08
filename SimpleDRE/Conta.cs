@@ -25,13 +25,6 @@ namespace SimpleDRE
             return attributes.Length > 0 ? attributes[0].Description : string.Empty;
         }
 
-        public static int GetId()
-        {
-            var db = Database.Connect();
-            var id = LiteDB.ObjectId.NewObjectId();
-            return Convert.ToInt32(id);
-        }
-
         public static dynamic GetAll()
         {
             var db = Database.Connect();
@@ -39,11 +32,12 @@ namespace SimpleDRE
             return col.FindAll();
         }
 
-        public static void Insert(Conta conta)
+        public static bool Insert(Conta conta)
         {
             var db = Database.Connect();
             var col = db.GetCollection<Conta>("conta");
-            col.Insert(conta);
+            var d = col.Insert(conta);
+            return d > 0;
         }
 
 
@@ -59,5 +53,10 @@ namespace SimpleDRE
         Despesas = 3,
         [Description("Receitas")]
         Receitas = 4,
+        [Description("Deduções da Receita Bruta")]
+        DeducoesReceita = 5,
+        [Description("Provisão para IR e CSLL")]
+        Provisao = 6,
+
     }
 }
