@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIFrm));
             this.lblConta = new System.Windows.Forms.Label();
             this.txtJaneiro = new System.Windows.Forms.MaskedTextBox();
             this.lblJaneiro = new System.Windows.Forms.Label();
@@ -477,6 +478,8 @@
             this.Controls.Add(this.lblJaneiro);
             this.Controls.Add(this.txtJaneiro);
             this.Controls.Add(this.lblConta);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MDIFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SimpleDRE";

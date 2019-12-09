@@ -142,7 +142,10 @@
             this.ClientSize = new System.Drawing.Size(944, 501);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lstDRE);
+            this.MaximizeBox = false;
             this.Name = "FrmReport";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório";
             this.ResumeLayout(false);
